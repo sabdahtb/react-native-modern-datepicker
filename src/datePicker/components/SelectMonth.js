@@ -76,8 +76,10 @@ const SelectMonth = () => {
   }, [prevDisable, nextDisable]);
 
   const onChangeYear = text => {
-    if (Number(utils.toEnglish(text))) {
-      setYear(utils.toPersianNumber(text));
+    if (Number(utils.toEnglish(text)) !== 0) {
+      setYear(text);
+    }else {
+      setYear("")
     }
   };
 
